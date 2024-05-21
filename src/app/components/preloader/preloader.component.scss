@@ -1,0 +1,89 @@
+@import '../../../assets/css/reset';
+@import '../../../assets/css/variables';
+@import '../../../assets/css/mixins';
+@import '../../../assets/css/typography';
+
+
+$lineThickness: 2px;
+$sunbeamLength: 16px;
+$sunbeamOffset: 12px;
+$sunColor: rgba(255, 221, 89, 1);
+
+.preloader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	@include flex;
+	z-index: 1000;
+	background-color: rgba($color: $black, $alpha: 0.7);
+	backdrop-filter: blur(8px);
+
+	&__text {
+		color: rgba(255, 221, 89, 1);
+		padding-top: 32px;
+	}
+}
+
+.sun {
+	width: 48px;
+	height: 48px;
+	margin: calc($sunbeamLength + $sunbeamOffset);
+	border: 2px solid $sunColor;
+	border-radius: 50%;
+	animation: sunShow 0.3s ease-in-out, sunJump 2s infinite alternate-reverse 1s;
+
+	&__sunbeam {
+		position: absolute;
+		top: calc(-1 * $sunbeamLength - $sunbeamOffset);
+		bottom: calc(-1 * $sunbeamLength - $sunbeamOffset);
+		left: 50%;
+		content: '';
+		width: $lineThickness;
+		border-radius: 6px;
+		background: linear-gradient($sunColor, $sunColor) top,
+			linear-gradient($sunColor, $sunColor) bottom;
+		background-size: 100% $sunbeamLength;
+		background-repeat: no-repeat;
+		transform: translate(-50%) rotate(0deg);
+
+		&:nth-child(2) {
+			transform: translate(-50%) rotate(45deg);
+		}
+
+		&:nth-child(3) {
+			transform: translate(-50%) rotate(-45deg);
+		}
+
+		&:nth-child(4) {
+			transform: translate(-50%) rotate(90deg);
+		}
+	}
+}
+
+@keyframes sunJump {
+	0% {
+		transform: translateX(-100%);
+	}
+
+	50% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(100%);
+	}
+}
+
+@keyframes sunShow {
+	0% {
+		opacity: 0;
+		filter: blur(4px);
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
