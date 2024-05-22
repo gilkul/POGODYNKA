@@ -1,6 +1,7 @@
 {
   "name": "POGODYNKA",
   "version": "0.0.0",
+  "homepage": "https://gilkul.github.io/POGODYNKA",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -41,6 +42,7 @@
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
     "@typescript-eslint/parser": "^6.10.0",
+    "angular-cli-ghpages": "^2.0.0-beta.2",
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^8.3.0",
     "jasmine-core": "^4.0.1",
