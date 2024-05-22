@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "homepage": "https://gilkul.github.io/POGODYNKA/",
+//   "homepage": "https://gilkul.github.io/POGODYNKA/",
   "newProjectRoot": "projects",
   "projects": {
     "POGODYNKA": {
@@ -21,7 +21,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "docs",
+            "outputPath": "release/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -39,7 +39,7 @@
           },
           "configurations": {
             "production": {
-              "baseHref": "./",
+              "baseHref": "/",
               "budgets": [
                 {
                   "type": "initial",
