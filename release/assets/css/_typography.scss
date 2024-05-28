@@ -22,89 +22,77 @@ strong {
 
 div.sun {
 	font-family: "Staatliches", sans-serif;
-	font-weight: 800;
 	text-transform: uppercase;
 
 }
 
-li.current-weather__item {
+.cw__list,
+.current-weather__item {
 	font-family: "Staatliches", sans-serif;
 	text-transform: uppercase;
-	font-size: 0.8rem;
-	line-height: 1.4rem;
-	overflow: auto;
+	font-size: 2vh;
+	// line-height: normal;
+	overflow: hidden;
 	text-align: center;
+	color: rgb(27,27,27);
 }
 
 li.suggestions {
-		overflow: hidden;
+	overflow: hidden;
+	color: rgb(27,27,27);
 }
 
 
 span.forecast__name {
 	font-family: "Staatliches", sans-serif;
-	font-weight: 400;
-	font-size: large;
-		color: white;
-			text-transform: uppercase;
-			letter-spacing: 2px;
-
-
+	// font-size: large;
+	color: rgb(27,27,27);
+	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 
 span.forecast__date {
 	font-family: "Staatliches", sans-serif;
-	font-weight: 600;
-	font-size: 20px;
-		color: white;
-			text-transform: uppercase;
-						letter-spacing: 2px;
-
-
-
+	// font-size: 20px;
+	color: rgb(27,27,27);
+	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 
 span.forecast__temp {
 	font-family: "Staatliches", sans-serif;
-	font-weight: 700;
-		color: white;
-			text-transform: uppercase;
-						letter-spacing: 2px;
-
-
-
-
+	color: rgb(27,27,27);
+	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 
 span.current-weather__name {
 font-family: "Staatliches", sans-serif;
-	font-weight: 900;
-		color: white;
-			text-transform: uppercase;
-			letter-spacing: 2px;
-
-
+color: rgb(27,27,27);
+text-transform: uppercase;
+letter-spacing: 2px;
 }
 
 span.current-weather__temp {
 font-family: "Staatliches", sans-serif;
-	font-weight: 900;
-		color: white;
-			text-transform: uppercase;
-			letter-spacing: 2px;
+color: rgb(27,27,27);
+text-transform: uppercase;
+letter-spacing: 2px;
+}
 
-
+.air {
+font-family: "Staatliches", sans-serif;
+color: rgb(27,27,27);
+text-transform: uppercase;
+letter-spacing: 2px;
 }
 
 
-ul.current-weather__items {
+.current-weather__items {
 font-family: "Staatliches", sans-serif;
-	font-weight: 800;
-	color: white;
-		text-transform: uppercase;
-			letter-spacing: 2px;
-
-
+color: rgb(27,27,27);
+text-transform: uppercase;
+letter-spacing: 2px;
 }
 
 h1.content__heading {
@@ -120,23 +108,24 @@ h1.content__heading {
 	}
 }
 h2.city__name {
-	font-size: 42px;
-	padding-bottom: -30px;
+	width: calc(100% - 20rem);
+	font-size: 2.3vw;
+	white-space: nowrap;
 }
 
 h3.uppercase.heading {
 	font-family: "Climate Crisis", sans-serif;
-	font-size: 1.6rem;
-	line-height: 1.4;
+	font-size: 1.6vw;
+	line-height: 1.2rem;
 	margin-top: 1.4rem;
-	margin-bottom: 0.8rem;
+	margin-bottom: 1rem;
 }
 
 h3.uppercase.heading.heading--forecast {
 	font-family: "Climate Crisis", sans-serif;
 	font-size: 2rem;
 	margin-top: 1rem;
-	margin-bottom: -0.5rem;
+	margin-bottom: -4rem;
 }
 
 h6.content__description {
