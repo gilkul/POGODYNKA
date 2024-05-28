@@ -1,17 +1,3 @@
-// export interface CurrentWeatherData {
-// 	city?: string;
-// 	sunrise?: string;
-// 	sunset?: string;
-// 	description?: string;
-// 	pressure?: number;
-// 	humidity?: number;
-// 	windSpeed?: number;
-// 	visibility?: number;
-// 	tempreture?: number;
-// 	perceivedTempreture: number;
-// 	icon?: string;
-// }
-
 export interface CurrentWeatherData {
 	data: any;
 	city: string;
@@ -21,8 +7,8 @@ export interface CurrentWeatherData {
 	pressure: number;
 	humidity: number;
 	windSpeed: number;
-	tempreture: number;
-	perceivedTempreture: number;
+	temperature: number;
+	perceivedTemperature: number;
 	icon: string;
 	coord: {
 		lon: number;
@@ -50,7 +36,7 @@ export interface CurrentWeatherData {
 	clouds: {
 		all: number;
 	};
-	visibility: number; // Add the 'visibility' property here
+	visibility: number;
 	dt: number;
 	sys: {
 		type: number;

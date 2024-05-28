@@ -11,7 +11,7 @@ export class OutfitSuggestionService {
 	currentWeather: CurrentWeatherAPI = {
 		description: '',
 		data: [],
-		tempreture: 0,
+		temperature: 0,
 		humidity: 0,
 		windSpeed: 0,
 		visibility: 0,
@@ -35,8 +35,6 @@ export class OutfitSuggestionService {
 		temp: 0,
 		id: 0,
 		cod: 0,
-		// humidity: 0, // Add the 'humidity' property here
-		// wind: 0 // Add the 'wind' property here
 	};
 
 	generateOutfitSuggestion(day: any): string {

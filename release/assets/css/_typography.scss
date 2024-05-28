@@ -5,7 +5,7 @@ html {
 html,
 body {
 	width: 100%;
-	font-family: "Climate Crisis", "Righteous", sans-serif;
+	font-family: "Climate Crisis", "Staatliches", sans-serif;
 	font-size: clamp(16px, 3vh, 20px);
 	font-optical-sizing: auto;
 }
@@ -21,28 +21,14 @@ strong {
 }
 
 div.sun {
-	font-family: "Righteous", sans-serif;
+	font-family: "Staatliches", sans-serif;
 	font-weight: 800;
 	text-transform: uppercase;
 
 }
 
-// li.current-weather__item {
-// 	text-align: right;
-// 	// font-size: calc(0.7vw + 0.7vh);
-// 	line-height: 1.4;
-// 	overflow: auto;
-// }
-
-
-// li.current-weather__item::after {
-//   content: "";
-//   display: inline-block;
-//   width: 100%;
-// }
-
 li.current-weather__item {
-	font-family: "Righteous", sans-serif;
+	font-family: "Staatliches", sans-serif;
 	text-transform: uppercase;
 	font-size: 0.8rem;
 	line-height: 1.4rem;
@@ -51,13 +37,12 @@ li.current-weather__item {
 }
 
 li.suggestions {
-	// font-size-adjust: auto;
-	overflow: hidden;
+		overflow: hidden;
 }
 
 
 span.forecast__name {
-	font-family: "Righteous", sans-serif;
+	font-family: "Staatliches", sans-serif;
 	font-weight: 400;
 	font-size: large;
 		color: white;
@@ -68,7 +53,7 @@ span.forecast__name {
 }
 
 span.forecast__date {
-	font-family: "Righteous", sans-serif;
+	font-family: "Staatliches", sans-serif;
 	font-weight: 600;
 	font-size: 20px;
 		color: white;
@@ -80,7 +65,7 @@ span.forecast__date {
 }
 
 span.forecast__temp {
-	font-family: "Righteous", sans-serif;
+	font-family: "Staatliches", sans-serif;
 	font-weight: 700;
 		color: white;
 			text-transform: uppercase;
@@ -92,7 +77,7 @@ span.forecast__temp {
 }
 
 span.current-weather__name {
-font-family: "Righteous", sans-serif;
+font-family: "Staatliches", sans-serif;
 	font-weight: 900;
 		color: white;
 			text-transform: uppercase;
@@ -102,7 +87,7 @@ font-family: "Righteous", sans-serif;
 }
 
 span.current-weather__temp {
-font-family: "Righteous", sans-serif;
+font-family: "Staatliches", sans-serif;
 	font-weight: 900;
 		color: white;
 			text-transform: uppercase;
@@ -113,7 +98,7 @@ font-family: "Righteous", sans-serif;
 
 
 ul.current-weather__items {
-font-family: "Righteous", sans-serif;
+font-family: "Staatliches", sans-serif;
 	font-weight: 800;
 	color: white;
 		text-transform: uppercase;
@@ -143,7 +128,6 @@ h3.uppercase.heading {
 	font-family: "Climate Crisis", sans-serif;
 	font-size: 1.6rem;
 	line-height: 1.4;
-	// padding-top: -1rem;
 	margin-top: 1.4rem;
 	margin-bottom: 0.8rem;
 }

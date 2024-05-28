@@ -9,6 +9,14 @@ import { PreloaderService } from '../components/preloader/services/preloader.ser
 import { OutfitSuggestionService } from './services/outfit-suggestion.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { API_KEY_G } from './API_KEY.const';
+import { AirQualityService } from './services/air-quality.service';
+import { AirQualityData } from './interfaces/air-quality-data';
+import { map } from 'rxjs';
+import { WeatherAlertsService } from './services/alert-w.service';
+import { WeatherAlertsData, WeatherAlertsDataAPI } from './interfaces/alerts-w-data';
+import { API_KEY_DL } from './API_KEY.const';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
 	selector: 'app-weather',
@@ -21,7 +29,13 @@ import { API_KEY_G } from './API_KEY.const';
 export class WeatherComponent implements OnInit {
 [x: string]: any;
 	outfitSuggestions: string[] = [];
-	location: Location = {};
+	location: Location = {
+		city: '',
+		lat: 0,
+		lng: 0,
+		latitude: 0,
+		longitude: 0
+	};
 	target!: string;
 	currentWeather: CurrentWeatherData = {
 		city: '',
@@ -32,8 +46,8 @@ export class WeatherComponent implements OnInit {
 		humidity: 0,
 		windSpeed: 0,
 		visibility: 0,
-		tempreture: 0,
-		perceivedTempreture: 0,
+		temperature: 0,
+		perceivedTemperature: 0,
 		icon: '',
 		coord: {
 			lon: 0,
@@ -69,6 +83,9 @@ export class WeatherComponent implements OnInit {
 		data: []
 	};
 	forecastWeather: any = {};
+	airQualityData!: AirQualityData;
+	weatherAlertsData: WeatherAlertsDataAPI | null = null;
+	weatherAlert: WeatherAlertsData | null = null;
 	iconsURL = 'assets/images/icons/';
 	sectionWithDataClass: string = 'section section--weather section--hidden';
 	errorShowClass!: string;
@@ -87,7 +104,10 @@ export class WeatherComponent implements OnInit {
 		public preloaderService: PreloaderService,
 		private outfitSuggestionService: OutfitSuggestionService,
 		private elRef: ElementRef,
-		private sanitizer: DomSanitizer
+		private sanitizer: DomSanitizer,
+		private airQualityService: AirQualityService,
+		private weatherAlertsService: WeatherAlertsService,
+		private httpClient: HttpClient
 	) { }
 	ngOnInit(): void {
 
@@ -121,6 +141,11 @@ export class WeatherComponent implements OnInit {
 							"Longitude: " + position.coords.longitude);
 						this.lat = position.coords.latitude;
 						this.lng = position.coords.longitude;
+						this.location = {
+							lat: this.lat,
+							lng: this.lng,
+							city: ''
+						};
 						console.log(this.lat);
 						console.log(this.lng);
 						this.getCityName();
@@ -151,54 +176,72 @@ export class WeatherComponent implements OnInit {
 	}
 
 
-showData(): void {
-  this.dataSubscription = forkJoin({
-    current: this.data.getCurrentWeatherData(this.location, this.target),
-    forecast: this.data.getForecastWeatherData(this.location, this.target),
-  }).subscribe({
-    next: (response) => {
-      console.log(response.forecast);
-      if (response) {
-        this.errorShowClass = '';
-        this.error = '';
-        const data = response.current.data[0];
-        this.currentWeather.city = data.city_name;
-        this.currentWeather.sunrise = data.sunrise;
-        this.currentWeather.sunset = data.sunset;
-        this.currentWeather.description = data.weather.description;
-        this.currentWeather.pressure = data.pres;
-        this.currentWeather.humidity = data.rh;
-        this.currentWeather.windSpeed = data.wind_spd;
-        this.currentWeather.visibility = data.vis;
-        this.currentWeather.tempreture = data.temp;
-        this.currentWeather.perceivedTempreture = data.app_temp;
-        this.currentWeather.icon = `${this.iconsURL}${data.weather.icon}.svg`;
-        this.forecastWeather = response.forecast;
-        this.currentWeather.data = response.current.data;
-        this.outfitSuggestions = this.currentWeather.data.map((day: any) => {
-          return this.outfitSuggestionService.generateOutfitSuggestion(day);
-        });
-        console.log(this.outfitSuggestions);
+	showData(): void {
+		this.dataSubscription = forkJoin({
+			current: this.data.getCurrentWeatherData(this.location, this.target),
+			forecast: this.data.getForecastWeatherData(this.location, this.target),
+			airQuality: this.airQualityService.getAirQualityData(this.location, this.target),
+			weatherAlerts: this.weatherAlertsService.getWeatherAlertsData(this.location, this.target),
+		}).subscribe({
+			next: (response) => {
+				console.log(response.forecast);
+				if (response) {
+					this.errorShowClass = '';
+					this.error = '';
+					const data = response.current.data[0];
+					this.currentWeather.city = data.city_name;
+					this.currentWeather.sunrise = data.sunrise;
+					this.currentWeather.sunset = data.sunset;
+					this.currentWeather.description = data.weather.description;
+					this.currentWeather.pressure = data.pres;
+					this.currentWeather.humidity = data.rh;
+					this.currentWeather.windSpeed = data.wind_spd;
+					this.currentWeather.visibility = data.vis;
+					this.currentWeather.temperature = data.temp;
+					this.currentWeather.perceivedTemperature = data.app_temp;
+					this.currentWeather.icon = `${this.iconsURL}${data.weather.icon}.svg`;
+					this.forecastWeather = response.forecast;
+					this.currentWeather.data = response.current.data;
+					this.airQualityData = response.airQuality;
+					console.log('Air Quality data:', this.airQualityData);
+					this.weatherAlertsData = response.weatherAlerts;
+					console.log('Weather Alert data:', this.weatherAlertsData);
 
-      } else {
-        this.errorShowClass = 'form__message';
-        this.error = this.errors.showError('noData');
-      }
-    },
-    error: () => {
-      this.preloaderService.isLoading.next(false);
-      this.showErrorMsgBox();
-    },
-    complete: () => {
-      if (this.location.city || this.target === 'geolocation') {
-        this.preloaderService.isLoading.next(false);
-        this.sectionWithDataClass = 'section section--weather';
-        this.ref.detectChanges();
-        this.scroll.scrollToAnchor('currentWeatherSection');
-      }
-    },
-  });
-}
+					this.weatherAlertsData.alerts.forEach((alert) => {
+						this.httpClient.post(`https://api-free.deepl.com/v2/translate`,
+							{ text: alert.description, target_lang: 'PL' },
+							{ headers: { 'Authorization': 'DeepL-Auth-Key' + API_KEY_DL } }
+						)
+							.subscribe((translationResponse: any) => {
+								alert.description = translationResponse.translations[0].text;
+							});
+					});
+
+					this.outfitSuggestions = this.currentWeather.data.map((day: any) => {
+						return this.outfitSuggestionService.generateOutfitSuggestion(day);
+					});
+					console.log(this.outfitSuggestions);
+
+				} else {
+					this.errorShowClass = 'form__message';
+					this.error = this.errors.showError('noData');
+				}
+			},
+			error: () => {
+				this.preloaderService.isLoading.next(false);
+				this.showErrorMsgBox();
+			},
+			complete: () => {
+				if (this.location.city || this.target === 'geolocation') {
+					this.preloaderService.isLoading.next(false);
+					this.sectionWithDataClass = 'section section--weather';
+					this.ref.detectChanges();
+					this.scroll.scrollToAnchor('currentWeatherSection');
+				}
+			},
+		});
+	}
+
 
 	async startApp(target: string): Promise<void> {
 		this.target = target;
@@ -210,10 +253,12 @@ showData(): void {
 					navigator.geolocation.getCurrentPosition(
 						(position) => {
 							this.location = {
-								latitude: position.coords.latitude,
-								longitude: position.coords.longitude,
+								lat: position.coords.latitude,
+								lng: position.coords.longitude,
 							};
+
 							this.showData();
+
 						},
 						() => {
 							this.showErrorMsgBox();
@@ -235,6 +280,8 @@ showData(): void {
 			}
 		}
 	}
+
+
 
 	getWeatherByGeolocation(): void {
 		this.errorShowClass = '';
