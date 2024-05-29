@@ -3,6 +3,7 @@
 @import '../../../assets/css/mixins';
 
 .footer {
+	font-weight: normal;
 	position: relative;
 	@include flex;
 	padding: 5.6vh;
@@ -37,11 +38,13 @@
 
 			&:hover,
 			&:focus {
-				color: $primaryColor;
+				color: $accent2;
+				text-decoration: wavy;
 			}
 		}
 	}
 }
+
 
 @media only screen and (min-width: 480px) and (max-width: 768px) {
 

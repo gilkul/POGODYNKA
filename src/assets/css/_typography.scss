@@ -5,9 +5,11 @@ html {
 html,
 body {
 	width: 100%;
-	font-family: "Climate Crisis", "Staatliches", sans-serif;
+	font-family: "Climate Crisis", "Plus Jakarta Sans", sans-serif;
 	font-size: clamp(16px, 3vh, 20px);
 	font-optical-sizing: auto;
+	font-weight: normal;
+
 }
 
 p {
@@ -21,21 +23,42 @@ strong {
 }
 
 div.sun {
-	font-family: "Staatliches", sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	text-transform: uppercase;
+	font-weight: 700;
 
 }
 
+.sun__item {
+		font-family: "Climate Crisis", sans-serif;
+		text-transform: uppercase;
+		font-weight: normal;
+}
+
+.sun__sunrise, .sun__sunset {
+	font-family: "Plus Jakarta Sans", sans-serif;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.current-weather__spans {
+	font-family: "Climate Crisis", sans-serif;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 1.7vh;
+	margin-right: 0.5vw;
+}
 .cw__list,
 .current-weather__item {
-	font-family: "Staatliches", sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	text-transform: uppercase;
 	font-size: 2vh;
-	// line-height: normal;
+	font-weight: 700;
 	overflow: hidden;
 	text-align: center;
 	color: rgb(27,27,27);
 }
+
 
 li.suggestions {
 	overflow: hidden;
@@ -44,55 +67,73 @@ li.suggestions {
 
 
 span.forecast__name {
-	font-family: "Staatliches", sans-serif;
-	// font-size: large;
+	font-family: "Climate Crisis", sans-serif;
+	line-height: normal;
 	color: rgb(27,27,27);
 	text-transform: uppercase;
 	letter-spacing: 2px;
+	font-weight: normal;
+
 }
 
 span.forecast__date {
-	font-family: "Staatliches", sans-serif;
-	// font-size: 20px;
+	font-family: "Plus Jakarta Sans", sans-serif;
+	font-weight: 700;
 	color: rgb(27,27,27);
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
 
 span.forecast__temp {
-	font-family: "Staatliches", sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	color: rgb(27,27,27);
 	text-transform: uppercase;
 	letter-spacing: 2px;
+		font-weight: 700;
+
 }
 
 span.current-weather__name {
-font-family: "Staatliches", sans-serif;
+font-family: "Climate Crisis", sans-serif;
 color: rgb(27,27,27);
 text-transform: uppercase;
 letter-spacing: 2px;
+font-weight: normal;
 }
 
 span.current-weather__temp {
-font-family: "Staatliches", sans-serif;
+font-family: "Plus Jakarta Sans", sans-serif;
 color: rgb(27,27,27);
 text-transform: uppercase;
 letter-spacing: 2px;
+font-weight: 700;
 }
 
 .air {
-font-family: "Staatliches", sans-serif;
+font-family: "Plus Jakarta Sans", sans-serif;
 color: rgb(27,27,27);
 text-transform: uppercase;
 letter-spacing: 2px;
+font-weight: 700;
+
+}
+
+h6.air-t {
+	font-family: "Climate Crisis", sans-serif;
+	color: rgb(27,27,27);
+text-transform: uppercase;
+letter-spacing: 2px;
+font-weight: normal;
 }
 
 
 .current-weather__items {
-font-family: "Staatliches", sans-serif;
+font-family: "Plus Jakarta Sans", sans-serif;
 color: rgb(27,27,27);
 text-transform: uppercase;
 letter-spacing: 2px;
+	font-weight: 700;
+
 }
 
 h1.content__heading {
@@ -119,6 +160,7 @@ h3.uppercase.heading {
 	line-height: 1.2rem;
 	margin-top: 1.4rem;
 	margin-bottom: 1rem;
+	font-weight: normal;
 }
 
 h3.uppercase.heading.heading--forecast {
@@ -126,11 +168,16 @@ h3.uppercase.heading.heading--forecast {
 	font-size: 2rem;
 	margin-top: 1rem;
 	margin-bottom: -4rem;
+	font-weight: normal;
 }
 
 h6.content__description {
-	font-size: 0.95rem;
-	line-height: 1.2rem;
+	font-family: "Plus Jakarta Sans", sans-serif;
+	font-size: 2vh;
+	line-height: 2.8vh;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-weight: 700;
 }
 
 h1,

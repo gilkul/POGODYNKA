@@ -18,6 +18,7 @@ import { API_KEY_DL } from './API_KEY.const';
 import { HttpClient } from '@angular/common/http';
 
 
+
 @Component({
 	selector: 'app-weather',
 	templateUrl: './weather.component.html',

@@ -2,8 +2,8 @@
 <section class="section section--welcome">
 	<div class="col col--form">
 		<main class="content">
-			<h1 class="content__heading">Czy wiesz jaka jest pogoda?</h1>
-			<h6 class="content__description">Wpisz miejscowość &#8212; nie pozwól pogodzie Cię zaskoczyć &#11088;</h6>
+			<h1 class="content__heading">Pogodzony z pogodą?</h1>
+			<h6 class="content__description">Wpisz miejscowość lub wyraź zgodę na zlokalizowanie &#8212; nie pozwól pogodzie Cię zaskoczyć!</h6>
 			<form class="form">
 				<input
 					type="text"
@@ -71,11 +71,11 @@
 			<div class="sun">
 				<ul class="sun__items">
 					<li class="sun__item">
-						Wschód:
+						Wschód
 						<time class="sun__sunrise">{{ currentWeather.sunrise }}</time>
 					</li>
 					<li class="sun__item">
-						Zachód:
+						Zachód
 						<time class="sun__sunset">{{ currentWeather.sunset }}</time>
 					</li>
 				</ul>
@@ -95,7 +95,7 @@
 					{{ currentWeather.temperature | number: '1.0-1' }} <sup> o</sup>C
 				</span>
 				<div *ngIf="airQualityData" class="air">
-					 <span class="airspan"><h6 class="air-t">Indeks jakości powietrza:</h6>
+					 <span class="airspan"><h6 class="air-t">Indeks jakości powietrza</h6>
 						<ul class="airspan__items">
 		<li class="airspan__item"><span class="i-a__spans">AQI:</span><span class="a-data__span">{{ airQualityData.data[0].aqi }}</span></li>
 		<li class="airspan__item"><span class="i-a__spans">CO:</span> <span class="a-data__span">{{ airQualityData.data[0].co }}</span></li>
@@ -116,7 +116,7 @@
 					<ul class="current-weather__items">
 						<div class="current-weather__item">
 							<li class="cw__list">
-							<span class="current-weather__spans"> Odczuwalna: </span>
+							<span class="current-weather__spans"> Odczuwalna </span>
 							<span class="current-weather__feels-like">{{
 								currentWeather.perceivedTemperature | number: '1.0-1'
 							}}<sup> o</sup>C</span>
@@ -124,7 +124,7 @@
 						</div>
 						<div class="current-weather__item">
 							<li class="cw__list">
-							<span class="current-weather__spans">Ciśnienie:</span>
+							<span class="current-weather__spans">Ciśnienie</span>
 							<span class="current-weather__pressure">{{
 								currentWeather.pressure | number: '1.0-0'
 							}}
@@ -133,7 +133,7 @@
 						</div>
 						<div class="current-weather__item">
 							<li class="cw__list">
-							<span class="current-weather__spans">Wilgotność:</span>
+							<span class="current-weather__spans">Wilgotność</span>
 							<span class="current-weather__humidity">{{
 								currentWeather.humidity | number: '1.0-1'
 							}}
@@ -141,21 +141,21 @@
 						</li></div>
 						<div class="current-weather__item">
 							<li class="cw__list">
-							<span class="current-weather__spans">Widoczność:</span>
+							<span class="current-weather__spans">Widoczność</span>
 							<span class="current-weather__visibility">{{
 								currentWeather.visibility | number: '1.0-1'
 							}} km</span>
 						</li></div>
 						<div class="current-weather__item">
 							<li class="cw__list">
-							<span class="current-weather__spans">Wiatr:</span>
+							<span class="current-weather__spans">Wiatr</span>
 							<span class="current-weather__wind-speed">{{
 								currentWeather.windSpeed | number: '1.0-1'
 							}} km/h</span>
 						</li></div>
 							<ul>
     						<div class="current-weather__item" id="sug__item">
-								<li id="suggestions" *ngFor="let suggestion of outfitSuggestions">{{ suggestion }}</li></div>
+								<span class="current-weather__spans">Sugestia</span><li class="cw__list" id="suggestions" *ngFor="let suggestion of outfitSuggestions">{{ suggestion }}</li></div>
   						</ul>
 					</ul>
 				</div>
