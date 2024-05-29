@@ -208,16 +208,6 @@ export class WeatherComponent implements OnInit {
 					this.weatherAlertsData = response.weatherAlerts;
 					console.log('Weather Alert data:', this.weatherAlertsData);
 
-					this.weatherAlertsData.alerts.forEach((alert) => {
-						this.httpClient.post(`https://api-free.deepl.com/v2/translate`,
-							{ text: alert.description, target_lang: 'PL' },
-							{ headers: { 'Authorization': 'DeepL-Auth-Key' + API_KEY_DL } }
-						)
-							.subscribe((translationResponse: any) => {
-								alert.description = translationResponse.translations[0].text;
-							});
-					});
-
 					this.outfitSuggestions = this.currentWeather.data.map((day: any) => {
 						return this.outfitSuggestionService.generateOutfitSuggestion(day);
 					});
