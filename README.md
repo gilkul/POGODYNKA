@@ -9,6 +9,7 @@ POGODYNKA is an Angular weather web app (SPA) based on the free versions of 4 AP
 - check for any weather alerts
 - check the weather map visualization (currently provided by Windy)
 
+
 ## ⭐ Main technologies used:
 - Angular
 - TypeScript
@@ -16,6 +17,7 @@ POGODYNKA is an Angular weather web app (SPA) based on the free versions of 4 AP
 - HTML
 - SCSS
 - RXJS
+
 
 ### 🐥 APIs used:
 - Weatherbit.io APIs (https://www.weatherbit.io/)
@@ -25,14 +27,17 @@ POGODYNKA is an Angular weather web app (SPA) based on the free versions of 4 AP
   - Current Weather API  
 - Google Geocoding API (https://developers.google.com/maps/documentation/geocoding)
 
+
 ### 🐣 Other resources used:
 - Windy Widget (https://www.windy.com)
 - Meteocons by Bas Milius (https://bas.dev/work/meteocons)
+
 
 ## 💡 Future plans for updates:
 - Replacement of the Windy Widget - switching to a map with weather layers.
 - Other language versions
 - Implementation of a language translation API for weather alerts (currently displayed in the language of the location that has been searched up)
+
 
 ## 📥 How to install and run the project:
 - This project was generated with Angular CLI version 17.1.0.
