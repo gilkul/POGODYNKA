@@ -1,22 +1,43 @@
 # POGODYNKA
 
-POGODYNKA is a weather web app based on the free version of API from Weatherbit.io and Google Geocoding API. The app lets you check the current weather and the forecast for the next 16 days by using the name of your city or your geolocation; it also suggest what you might want to wear based on the current weather. POGODYNKA uses custom weather icons designed by Bas Milius. 
+POGODYNKA is a responsive Angular weather web app (SPA) based on the free versions of 4 APIs from Weatherbit.io and Google Geocoding API. The user can either look up a location through the search bar or use geolocation. POGODYNKA uses custom weather icons designed by Bas Milius. Currently available only in Polish. This is a non-commercial, front end focused project that demonstrates the knowledge of the usage of APIs and Angular. POGODYNKA includes both desktop and mobile versions; the latter work on most of the popular tablets and smartphones. 
 
-## 🛠️ Technologies used:
+### 🔆 POGODYNKA lets you:
+- check the current weather 
+- check the weather forecast for the next 16 days
+- check the current air quality
+- check for any weather alerts
+- check the weather map visualization (currently provided by Windy)
+
+
+## ⭐ Main technologies used:
 - Angular
 - TypeScript
-- RXJS
 - Node.js
 - HTML
 - SCSS
+- RXJS
 
-## 📚 APIs used:
-- Weatherbit.io (https://www.weatherbit.io/)
-- Google Geocoding (https://developers.google.com/maps/documentation/geocoding)
 
-## 📚 Other resources used:
-- Windy Widget // to be replaced with responsive map with weather tiles in the next update
+### 🐥 APIs used:
+- Weatherbit.io APIs (https://www.weatherbit.io/)
+  - Air Quality API
+  - Severe Weather Alerts API
+  - Forecast API
+  - Current Weather API  
+- Google Geocoding API (https://developers.google.com/maps/documentation/geocoding)
+
+
+### 🐣 Other resources used:
+- Windy Widget (https://www.windy.com)
 - Meteocons by Bas Milius (https://bas.dev/work/meteocons)
+
+
+## 💡 Future plans for updates:
+- Replacement of the Windy Widget - switching to a map with weather layers.
+- Other language versions
+- Implementation of a language translation API for weather alerts (currently displayed in the language of the location that has been searched up)
+
 
 ## 📥 How to install and run the project:
 - This project was generated with Angular CLI version 17.1.0.
