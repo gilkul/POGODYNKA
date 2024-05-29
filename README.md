@@ -17,7 +17,7 @@ POGODYNKA is an Angular weather web app (SPA) based on the free versions of 4 AP
 - SCSS
 - RXJS
 
-## 🐥 APIs used:
+### 🐥 APIs used:
 - Weatherbit.io APIs (https://www.weatherbit.io/)
   - Air Quality API
   - Severe Weather Alerts API
@@ -25,7 +25,7 @@ POGODYNKA is an Angular weather web app (SPA) based on the free versions of 4 AP
   - Current Weather API  
 - Google Geocoding API (https://developers.google.com/maps/documentation/geocoding)
 
-## 🐣 Other resources used:
+### 🐣 Other resources used:
 - Windy Widget (https://www.windy.com)
 - Meteocons by Bas Milius (https://bas.dev/work/meteocons)
 
