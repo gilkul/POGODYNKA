@@ -1,6 +1,6 @@
 # POGODYNKA
 
-POGODYNKA is an Angular weather web app (SPA) based on the free versions of 4 APIs from Weatherbit.io and Google Geocoding API. The user can either look up a location through the search bar or use geolocation. POGODYNKA uses custom weather icons designed by Bas Milius. Currently available only in Polish.
+POGODYNKA is an Angular weather web app (SPA) based on the free versions of 4 APIs from Weatherbit.io and Google Geocoding API. The user can either look up a location through the search bar or use geolocation. POGODYNKA uses custom weather icons designed by Bas Milius. Currently available only in Polish. This is a non-commercial, front end focused project that demonstrates the knowledge of the usage of APIs and Angular. 
 
 ### 🔆 POGODYNKA lets you:
 - check the current weather 
