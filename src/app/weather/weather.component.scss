@@ -693,6 +693,19 @@ div.col.city-image {
 	width: 100%;
 }
 
+.sun > .sun__icon {
+	width:fit-content;
+	margin: 1.5vh;
+}
+
+.sun > .sun__items {
+	margin: 1.5vh;
+}
+
+.sun__items > .sun__icon {
+	justify-content: space-around;
+}
+
 .sun {
 	@include flex($flexDirection: row);
 	object-fit: contain;
@@ -714,7 +727,7 @@ div.col.city-image {
 		display: flex;
 		flex-direction: column;
 		margin-right: 1vh;
-		margin-left: 0.5vh;
+		margin-left: 1vh;
 	}
 
 	.sun__items > .sun__sunset .sun__sunrise {
@@ -729,7 +742,7 @@ div.col.city-image {
 		border: 3px solid rgb(27,27,27);
 
 		@include desktopUp {
-		margin: 1rem 0.75rem 1rem 0.75rem;
+		// margin: 1rem 0.75rem 1rem 0.75rem;
 		padding: 0.75vh;
 		align-self: center;
 		border-radius: 15px;
@@ -749,7 +762,7 @@ div.col.city-image {
 		text-align: left;
 		width: 100%;
 		white-space: nowrap;
-		margin: 1vh;
+		margin: 1vh 1vh 1vh 0vh;
 
 
 		@include desktopUp {
@@ -1086,6 +1099,69 @@ main.content {
     }
   }
 
+
+.form {
+	position: relative;
+	width: auto;
+	margin-top: 2rem;
+	color: whitesmoke;
+
+	&__input {
+		display: block;
+		background: none;
+		border-radius: 2.5vh;
+		border: 3px solid whitesmoke;
+		outline: none;
+		height: $inputHeight;
+		width: 100%;
+		padding: 0 calc(#{$inputHeight} + 0.5rem) 0 1rem;
+		color: whitesmoke;
+		@include basicTransition;
+
+
+		&::placeholder {
+			color: whitesmoke;
+			opacity: 0.3;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-size: calc(1.55vh - 0.35vmin);
+			align-content: center;
+			align-self: center;
+			@include basicTransition;
+		}
+
+		&:hover::placeholder {
+			opacity: 0.8;
+		}
+
+		&:focus {
+			border-color: $primaryColor;
+		}
+	}
+
+	&__btn {
+		position: absolute;
+		top: 0;
+		left: calc(100% - #{$inputHeight});
+		width: calc(#{$inputHeight} - 0.1px);
+		height: calc(#{$inputHeight} - 0.01px);
+		background-color: $danger;
+		border: 3px solid whitesmoke;
+		border-radius: 2.5vh;
+		outline: 0;
+		@include basicTransition;
+
+			.search__icon {
+			margin-top: 0.2vh;}
+		}
+
+		&:hover {
+			border-color: $primaryColor;
+			cursor: pointer;
+		}
+
+}
+
  .form__input {
     width: 100%;
   }
@@ -1138,10 +1214,14 @@ main.content {
 	}
 }
 
+.current-weather__temp {
+	margin-top: 1vh;
+	margin-bottom: 2vh;
+}
+
 .current-weather__name.uppercase {
 		font-size: 2.2vh!important;
-		margin-bottom: 1vh;
-		margin-top: 2vh;
+		margin: 2vh 0.5vh 1vh 0.5vh;
 	}
 
 	.col__container  > .sun {
@@ -1462,6 +1542,68 @@ h6.content__description {
       padding: 1rem;
     }
   }
+
+  .form {
+	position: relative;
+	width: auto;
+	margin-top: 2rem;
+	color: whitesmoke;
+
+	&__input {
+		display: block;
+		background: none;
+		border-radius: 2vh;
+		border: 3px solid whitesmoke;
+		outline: none;
+		height: $inputHeight;
+		width: 100%;
+		padding: 0 calc(#{$inputHeight} + 0.5rem) 0 1rem;
+		color: whitesmoke;
+		@include basicTransition;
+
+
+		&::placeholder {
+			color: whitesmoke;
+			opacity: 0.3;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-size: calc(1.55vh - 0.35vmin);
+			align-content: center;
+			align-self: center;
+			@include basicTransition;
+		}
+
+		&:hover::placeholder {
+			opacity: 0.8;
+		}
+
+		&:focus {
+			border-color: $primaryColor;
+		}
+	}
+
+	&__btn {
+		position: absolute;
+		top: 0;
+		left: calc(100% - #{$inputHeight});
+		width: calc(#{$inputHeight} - 0.1px);
+		height: calc(#{$inputHeight} - 0.01px);
+		background-color: $danger;
+		border: 3px solid whitesmoke;
+		border-radius: 2vh;
+		outline: 0;
+		@include basicTransition;
+
+			.search__icon {
+			margin-top: 0.2vh;}
+		}
+
+		&:hover {
+			border-color: $primaryColor;
+			cursor: pointer;
+		}
+
+}
 
  .form__input {
     width: 100%;
@@ -1857,6 +1999,68 @@ h6.content__description {
     }
   }
 
+  .form {
+	position: relative;
+	width: auto;
+	margin-top: 2rem;
+	color: whitesmoke;
+
+	&__input {
+		display: block;
+		background: none;
+		border-radius: 2vh;
+		border: 3px solid whitesmoke;
+		outline: none;
+		height: $inputHeight;
+		width: 100%;
+		padding: 0 calc(#{$inputHeight} + 0.5rem) 0 1rem;
+		color: whitesmoke;
+		@include basicTransition;
+
+
+		&::placeholder {
+			color: whitesmoke;
+			opacity: 0.3;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-size: calc(1.55vh - 0.35vmin);
+			align-content: center;
+			align-self: center;
+			@include basicTransition;
+		}
+
+		&:hover::placeholder {
+			opacity: 0.8;
+		}
+
+		&:focus {
+			border-color: $primaryColor;
+		}
+	}
+
+	&__btn {
+		position: absolute;
+		top: 0;
+		left: calc(100% - #{$inputHeight});
+		width: calc(#{$inputHeight} - 0.1px);
+		height: calc(#{$inputHeight} - 0.01px);
+		background-color: $danger;
+		border: 3px solid whitesmoke;
+		border-radius: 2vh;
+		outline: 0;
+		@include basicTransition;
+
+			.search__icon {
+			margin-top: 0.2vh;}
+		}
+
+		&:hover {
+			border-color: $primaryColor;
+			cursor: pointer;
+		}
+
+}
+
  .form__input {
     width: 100%;
   }
@@ -2245,6 +2449,68 @@ h6.content__description {
       padding: 1rem;
     }
   }
+
+  .form {
+	position: relative;
+	width: auto;
+	margin-top: 2rem;
+	color: whitesmoke;
+
+	&__input {
+		display: block;
+		background: none;
+		border-radius: 1.75vh;
+		border: 3px solid whitesmoke;
+		outline: none;
+		height: $inputHeight;
+		width: 100%;
+		padding: 0 calc(#{$inputHeight} + 0.5rem) 0 1rem;
+		color: whitesmoke;
+		@include basicTransition;
+
+
+		&::placeholder {
+			color: whitesmoke;
+			opacity: 0.3;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-size: calc(1.55vh - 0.35vmin);
+			align-content: center;
+			align-self: center;
+			@include basicTransition;
+		}
+
+		&:hover::placeholder {
+			opacity: 0.8;
+		}
+
+		&:focus {
+			border-color: $primaryColor;
+		}
+	}
+
+	&__btn {
+		position: absolute;
+		top: 0;
+		left: calc(100% - #{$inputHeight});
+		width: calc(#{$inputHeight} - 0.1px);
+		height: calc(#{$inputHeight} - 0.01px);
+		background-color: $danger;
+		border: 3px solid whitesmoke;
+		border-radius: 1.75vh;
+		outline: 0;
+		@include basicTransition;
+
+			.search__icon {
+			margin-top: 0.2vh;}
+		}
+
+		&:hover {
+			border-color: $primaryColor;
+			cursor: pointer;
+		}
+
+}
 
  .form__input {
     width: 100%;
